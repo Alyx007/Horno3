@@ -25,26 +25,29 @@ struct ContentView: View {
                 .tabItem {
                     Label("Tab 3", systemImage: "circle")
                 }
+            
         }
         .tabViewStyle(.page)
         .ignoresSafeArea()
     }
             }
-    private var tab1: some View {
-        ZStack {
-            LinearGradient(colors: [.red, .orange], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-            VStack(alignment: .leading) {
-                Image(systemName: "swift")
-                Text("Bienvenido")
-                    .foregroundColor(.black)
-                Text("Al horno 3")
-            }
-            .foregroundColor(.white)
-            .font(.largeTitle)
-            .fontWeight(.black)
+private var tab1: some View {
+    ZStack {
+        LinearGradient(colors: [.red, .orange], startPoint: .top, endPoint: .bottom)
+            .ignoresSafeArea()
+        VStack(alignment: .leading) {
+            Image(systemName: "swift")
+            Text("Bienvenido")
+                .foregroundColor(.black)
+            Text("Al horno 3")
+            
         }
+        .foregroundColor(.white)
+        .font(.largeTitle)
+        .fontWeight(.black)
+        
     }
+}
     private var tab2: some View {
         ZStack {
             LinearGradient(colors: [.orange, .yellow], startPoint: .top, endPoint: .bottom)
@@ -60,28 +63,33 @@ struct ContentView: View {
             .fontWeight(.black)
         }
     }
-    private var tab3: some View {
-        ZStack {
-            LinearGradient(colors: [.yellow, .green], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-            VStack(alignment: .leading) {
-                Image(systemName: "swift")
-                Text("你好")
-                    .foregroundColor(.black)
-                Text("这是第3页")
-            }
-            .foregroundColor(.white)
-            .font(.largeTitle)
-            .fontWeight(.black)
-            ZStack{
-                Button("Skip>>"){
-                    
-                }
-                .accessibilityLabel("Skip button")
-                        .accessibilityHint("Tap to skip the current screen")
-
-            }
+private var tab3: some View {
+    ZStack {
+        LinearGradient(colors: [.yellow, .green], startPoint: .top, endPoint: .bottom)
+            .ignoresSafeArea()
+        
+        VStack(alignment: .leading) {
+            Image(systemName: "swift")
+            Text("你好")
+                .foregroundColor(.black)
+            Text("这是第3页")
         }
+        .foregroundColor(.white)
+        .font(.largeTitle)
+        .fontWeight(.black)
+        
+        // Button in the top-right corner
+        Button("Skip>>") {
+            // Action for the skip button
+        }
+        .accessibilityLabel("Skip button")
+        .accessibilityHint("Tap to skip the current screen")
+        .padding() // Adding some padding
+        .background(Color.white.opacity(0.7)) // Optional: for visibility
+        .cornerRadius(8) // Optional: to round the corners of the button
+        .frame(maxWidth: .infinity, alignment: .topTrailing) // Aligns the button to the top-right corner
+        .padding() // Ensures there's some space around the button
+    }
     }
                                           
 #Preview {

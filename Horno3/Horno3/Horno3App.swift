@@ -2,7 +2,7 @@
 //  Horno3App.swift
 //  Horno3
 //
-//  Created by Alumno on 28/02/25.
+//  Created by Apus on 28/02/25.
 //
 
 import SwiftUI
