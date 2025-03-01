@@ -78,17 +78,17 @@ private var tab3: some View {
         .font(.largeTitle)
         .fontWeight(.black)
         
-        // Button in the top-right corner
+        
         Button("Skip>>") {
-            // Action for the skip button
+            
         }
         .accessibilityLabel("Skip button")
         .accessibilityHint("Tap to skip the current screen")
-        .padding() // Adding some padding
-        .background(Color.white.opacity(0.7)) // Optional: for visibility
-        .cornerRadius(8) // Optional: to round the corners of the button
-        .frame(maxWidth: .infinity, alignment: .topTrailing) // Aligns the button to the top-right corner
-        .padding() // Ensures there's some space around the button
+        .padding()
+        .background(Color.white.opacity(0.7))
+        .cornerRadius(8)
+        .frame(maxWidth: .infinity, alignment: .topTrailing)
+        .padding()
     }
     }
                                           
