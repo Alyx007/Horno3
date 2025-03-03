@@ -12,23 +12,25 @@ struct ContentView: View {
         /*Button("Hacer anuncio"){
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             UIAccessibility.post(notification: .announcement, argument: "First Try")*/
-        TabView {
-            tab1
-                .tabItem {
-                    Label("Tab 1", systemImage: "circle")
-                }
-            tab2
-                .tabItem {
-                    Label("Tab 2", systemImage: "circle")
-                }
-            tab3
-                .tabItem {
-                    Label("Tab 3", systemImage: "circle")
-                }
-            
+        NavigationView{
+            TabView {
+                tab1
+                    .tabItem {
+                        Label("Tab 1", systemImage: "circle")
+                    }
+                tab2
+                    .tabItem {
+                        Label("Tab 2", systemImage: "circle")
+                    }
+                tab3
+                    .tabItem {
+                        Label("Tab 3", systemImage: "circle")
+                    }
+                
+            }
+            .tabViewStyle(.page)
+            .ignoresSafeArea()
         }
-        .tabViewStyle(.page)
-        .ignoresSafeArea()
     }
             }
 private var tab1: some View {
@@ -36,7 +38,7 @@ private var tab1: some View {
         LinearGradient(colors: [.red, .orange], startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea()
         VStack(alignment: .leading) {
-            Image(systemName: "swift")
+            Image(systemName: "person.crop.circle.fill")
             Text("Bienvenido")
                 .foregroundColor(.black)
             Text("Al horno 3")
@@ -53,7 +55,7 @@ private var tab1: some View {
             LinearGradient(colors: [.orange, .yellow], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
-                Image(systemName: "swift")
+                Image(systemName: "person.crop.circle.fill")
                 Text("Welcome")
                     .foregroundColor(.black)
                 Text("This is page 2")
@@ -69,7 +71,7 @@ private var tab3: some View {
             .ignoresSafeArea()
         
         VStack(alignment: .leading) {
-            Image(systemName: "swift")
+            Image(systemName: "person.crop.circle.fill")
             Text("你好")
                 .foregroundColor(.black)
             Text("这是第3页")
@@ -78,19 +80,21 @@ private var tab3: some View {
         .font(.largeTitle)
         .fontWeight(.black)
         
-        
-        Button("Skip>>") {
-            
+            NavigationLink("Skip>>") {
+                Text("Start")
+            }
+            .accessibilityLabel("Skip button")
+            .accessibilityHint("Tap to skip the current screen")
+            .padding()
+            .background(Color.white.opacity(0.7))
+            .cornerRadius(8)
+            .frame(maxWidth: .infinity, alignment: .topTrailing)
+            .padding()
+            Spacer()
         }
-        .accessibilityLabel("Skip button")
-        .accessibilityHint("Tap to skip the current screen")
-        .padding()
-        .background(Color.white.opacity(0.7))
-        .cornerRadius(8)
-        .frame(maxWidth: .infinity, alignment: .topTrailing)
-        .padding()
+        
     }
-    }
+    
                                           
 #Preview {
     ContentView()
