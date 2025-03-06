@@ -81,7 +81,8 @@ private var tab3: some View {
         .fontWeight(.black)
         
             NavigationLink("Skip>>") {
-                Text("Start")
+                InicioView()
+                    .navigationBarBackButtonHidden(true)
             }
             .accessibilityLabel("Skip button")
             .accessibilityHint("Tap to skip the current screen")
