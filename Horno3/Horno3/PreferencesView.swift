@@ -28,6 +28,8 @@ struct PreferencesView: View {
     
     @State private var selectedLikes: Likes = .history
     
+    @State private var selectedAccesibilityMode: AccesibilityMode = .full
+    
     @State private var UserName : String = ""
     
     var body: some View {
@@ -67,9 +69,9 @@ struct PreferencesView: View {
                     Text("Choose your interest")
                 }
                 
-                Picker(selection: $selectedAge) {
-                    Text("Kid").tag(Age.kid)
-                    Text("Young Adult / Student").tag(Age.youngAdult)
+                Picker(selection: $selectedAccesibilityMode) {
+                    Text("I don't need special attention").tag(AccesibilityMode.full)
+                    Text("I cannot see ").tag(AccesibilityMode.eyes)
                     Text("Adult").tag(Age.adult)
                     Text("Grand").tag(Age.viejo)
                 } label: {
