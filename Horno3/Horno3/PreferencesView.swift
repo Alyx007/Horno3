@@ -25,6 +25,10 @@ struct PreferencesView: View {
         Text(UserName)
             .font(.headline)
             .padding()
+        
+        Text(UserName)
+            .font(.headline)
+            .padding()
 
         VStack {
             List {
