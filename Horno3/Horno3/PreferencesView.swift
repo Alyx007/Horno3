@@ -2,7 +2,7 @@
 //  PreferencesView.swift
 //  Horno3
 //
-//  Created by Alumno on 28/02/25.
+//  Created by Aleksandra on 28/02/25.
 //
 
 import SwiftUI
@@ -13,22 +13,36 @@ struct PreferencesView: View {
         case kid, youngAdult, adult, viejo
         var id: Self { self }
     }
+    
+    enum Likes: String, CaseIterable, Identifiable {
+        case history, engineering, nature, experiments, surprise
+        var id: Self { self }
+    }
+    
+    enum AccesibilityMode: String, CaseIterable, Identifiable {
+        case full, eyes, ears, movement
+        var id: Self { self }
+    }
+    
     @State private var selectedAge: Age = .kid
+    
+    @State private var selectedLikes: Likes = .history
     
     @State private var UserName : String = ""
     
     var body: some View {
         
-        TextField("Ingresa tu nombre: ", text: $UserName)
-            .padding()
         
-        Text(UserName)
-            .font(.headline)
-            .padding()
         
-        Text(UserName)
-            .font(.headline)
-            .padding()
+        HStack {
+            TextField("Ingresa tu nombre: ", text: $UserName)
+                .padding()
+            Text(UserName)
+                .font(.headline)
+        }
+        
+        
+        
 
         VStack {
             List {
@@ -42,14 +56,15 @@ struct PreferencesView: View {
                     Text("Choose your age group")
                 }
                 
-                Picker(selection: $selectedAge) {
-                    Text("Kid").tag(Age.kid)
-                    Text("Young Adult / Student").tag(Age.youngAdult)
-                    Text("Adult").tag(Age.adult)
-                    Text("Grand").tag(Age.viejo)
+                Picker(selection: $selectedLikes) {
+                    Text("History").tag(Likes.history)
+                    Text("Engineering").tag(Likes.engineering)
+                    Text("Nature").tag(Likes.nature)
+                    Text("Experiments").tag(Likes.experiments)
+                    Text("I don´t have any preference").tag(Likes.surprise)
                 } label: {
                     Text("What do you like to see")
-                    Text("Choose your age group")
+                    Text("Choose your interest")
                 }
                 
                 Picker(selection: $selectedAge) {
