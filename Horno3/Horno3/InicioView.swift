@@ -11,13 +11,13 @@ struct InicioContentView: View {
     let tab: Tab
     
     var body: some View {
-        VStack{
+        //VStack{
             ZStack{
                 Image("HornoImagenFondo")
                     .resizable()
                     .frame(height: .infinity)
-                    .edgesIgnoringSafeArea(.top)
-                Spacer()
+                    .edgesIgnoringSafeArea(.all)
+                //Spacer()
                 ZStack{
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.gray)
@@ -87,7 +87,7 @@ struct InicioContentView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 300)
             }
-        }
+        //}
     }
 }
 
