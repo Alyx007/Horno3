@@ -1,14 +1,14 @@
 //
-//  Horno3App.swift
-//  Horno3
+//  MAPImplementacionApp.swift
+//  MAPImplementacion
 //
-//  Created by Apus on 28/02/25.
+//  Created by Alumno on 13/03/25.
 //
 
 import SwiftUI
 
 @main
-struct Horno3App: App {
+struct MAPImplementacionApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
