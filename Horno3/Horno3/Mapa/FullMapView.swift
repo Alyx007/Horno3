@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct FullMapView: View {
-    @State var isExpanded: Bool
+    @Binding var isExpanded: Bool
     
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -19,29 +19,39 @@ struct FullMapView: View {
     )
     
     var body: some View {
-            ZStack{
-                Map(position: $region)
-                    .edgesIgnoringSafeArea(.all)
-                ZStack(alignment: .top) {
-                    Button(action: {
-                        withAnimation {
-                            isExpanded.toggle() // Collapse when tapped
+        ZStack{
+            Map(position: $region)
+                .edgesIgnoringSafeArea(.all)
+            ZStack(alignment: .top) {
+                Button(action: {
+                 withAnimation {
+                 isExpanded.toggle()
+                 }
+                 })
+                {
+                Image(systemName: "house.circle.fill")
+                    .resizable()
+                    .font(.title)
+                    .foregroundColor(.orange)
+                    .frame(maxWidth: 75, maxHeight: 75)
+                    .padding()
                         }
-                    }) {
-                        Image(systemName: "house.circle.fill")
-                            .resizable()
-                            .font(.title)
-                            .foregroundColor(.green)
-                            .frame(width: 75, height: 75)
-                            
                     }
-            }
-                
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                }
         }
     }
-}
 
-
-#Preview {
-    FullMapView(isExpanded: true)
+/*#Preview {
+    struct Preview: View{
+        @State var isExpanded: Bool = true
+        var body: some View{
+            FullMapView(isExpanded: $isExpanded)
+        }
+    }
+    return Preview()
+}*/
+#Preview() {
+    @Previewable @State var isExpanded = true
+    return FullMapView(isExpanded: $isExpanded)
 }

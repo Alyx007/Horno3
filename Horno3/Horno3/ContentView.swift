@@ -14,11 +14,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if isExpanded {
-                FullMapView(isExpanded: isExpanded)
-                    .edgesIgnoringSafeArea(.all) // Expand to full screen
+                FullMapView(isExpanded: $isExpanded)
             } else {
-                MiniMapView(isExpanded: isExpanded)
-                    .frame(width: 350, height: 200) // Mini map size
+                MiniMapView(isExpanded: $isExpanded)
+                Text("NoEXPANDEN")
             }
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MiniMapView: View {
-    @State var isExpanded: Bool
+    @Binding var isExpanded: Bool
     
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -21,14 +21,15 @@ struct MiniMapView: View {
     var body: some View {
         Map(position: $region, interactionModes: [])
             .clipShape(RoundedRectangle(cornerRadius: 16))
+            .frame(width: 350, height: 200)
             .onTapGesture {
                 withAnimation {
-                    isExpanded.toggle() // Expand when tapped
+                    isExpanded.toggle()
                 }
             }
     }
 }
 
-#Preview {
+/*#Preview {
     MiniMapView(isExpanded: false)
-}
+}*/
