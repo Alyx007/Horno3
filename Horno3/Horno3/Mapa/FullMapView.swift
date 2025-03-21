@@ -10,6 +10,7 @@ import MapKit
 
 struct FullMapView: View {
     @Binding var isExpanded: Bool
+    @State private var isSheetPresented = false
     
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -24,33 +25,34 @@ struct FullMapView: View {
                 .edgesIgnoringSafeArea(.all)
             ZStack(alignment: .top) {
                 Button(action: {
-                 withAnimation {
-                 isExpanded.toggle()
-                 }
-                 })
-                {
-                Image(systemName: "house.circle.fill")
-                    .resizable()
-                    .font(.title)
-                    .foregroundColor(.orange)
-                    .frame(maxWidth: 75, maxHeight: 75)
-                    .padding()
-                        }
+                    withAnimation {
+                        isExpanded.toggle()
                     }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                })
+                {
+                    Image(systemName: "house.circle.fill")
+                        .resizable()
+                        .font(.title)
+                        .foregroundColor(.orange)
+                        .background(.white)
+                        .clipShape(.circle)
+                        .frame(maxWidth: 75, maxHeight: 75)
+                        .padding()
                 }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .edgesIgnoringSafeArea(.all)
+            ZStack{
+                VStack {
+                    Spacer()
+                    MapaSheetView()
+                        .frame(height: 300)
+                        .transition(.move(edge: .bottom))
+                }
+            }
         }
     }
-
-/*#Preview {
-    struct Preview: View{
-        @State var isExpanded: Bool = true
-        var body: some View{
-            FullMapView(isExpanded: $isExpanded)
-        }
-    }
-    return Preview()
-}*/
+}
 #Preview() {
     @Previewable @State var isExpanded = true
     return FullMapView(isExpanded: $isExpanded)

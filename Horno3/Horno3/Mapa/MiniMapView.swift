@@ -19,17 +19,22 @@ struct MiniMapView: View {
     )
     
     var body: some View {
-        Map(position: $region, interactionModes: [])
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .frame(width: 350, height: 200)
-            .onTapGesture {
-                withAnimation {
-                    isExpanded.toggle()
+            Map(position: $region, interactionModes: [])
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .frame(width: 350, height: 200)
+                .onTapGesture {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
                 }
-            }
     }
 }
 
 /*#Preview {
     MiniMapView(isExpanded: false)
 }*/
+
+#Preview() {
+    @Previewable @State var isExpanded = false
+    return MiniMapView(isExpanded: $isExpanded)
+}
