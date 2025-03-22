@@ -55,7 +55,7 @@ struct FullMapView: View {
                         
                     }
                     .presentationDetents([.height(100), .fraction(0.4), .fraction(0.7)], selection: $selectedDetent)
-                    .presentationDragIndicator(.hidden)
+                    .presentationDragIndicator(.visible)
                     .interactiveDismissDisabled()
                     .presentationBackgroundInteraction(.enabled)
                 }
