@@ -10,7 +10,9 @@ import MapKit
 
 struct FullMapView: View {
     @Binding var isExpanded: Bool
-    @State private var isSheetPresented = false
+    @State private var selectedDetent: PresentationDetent = .height(100)
+    @State private var showSettings = false
+
     
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -39,15 +41,34 @@ struct FullMapView: View {
                         .frame(maxWidth: 75, maxHeight: 75)
                         .padding()
                 }
+                ZStack{
+                    //MapaSheetView()
+                }
+                .sheet(isPresented: .constant(true)) {
+                    VStack{
+                        //MapaSheetView()
+                        if (selectedDetent != .height(100)) {
+                            Text("We can’t wait to see what you will Create with Swift!")
+                                .font(.title)
+                            
+                        }
+                        
+                    }
+                    .presentationDetents([.height(100), .fraction(0.4), .fraction(0.7)], selection: $selectedDetent)
+                    .presentationDragIndicator(.hidden)
+                    .interactiveDismissDisabled()
+                    .presentationBackgroundInteraction(.enabled)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .edgesIgnoringSafeArea(.all)
-            ZStack{
+            ZStack(){
                 VStack {
-                    Spacer()
-                    MapaSheetView()
-                        .frame(height: 300)
-                        .transition(.move(edge: .bottom))
+                    //Spacer()
+                    //MapaSheetView()
+                    //  .frame(height: 300)
+                    // .transition(.move(edge: .bottom))
+
                 }
             }
         }

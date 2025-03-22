@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MapaSheetView: View {
-    @State private var isSheetPresented = false
+    
+    @State private var selectedDetent: PresentationDetent = .height(100)
     
     var body: some View {
         VStack {
-            Text("pRUEBA SHHET")
-                .font(.headline)
+
 
         }
         .frame(maxWidth: .infinity)
@@ -21,7 +21,20 @@ struct MapaSheetView: View {
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: 10)
+        .sheet(isPresented: .constant(true)) {
+            VStack{
+                if (selectedDetent != .height(100)) {
+                    Text("We can’t wait to see what you will Create with Swift!")
+                }
+                
+            }
+            .presentationDetents([.height(100), .fraction(0.4), .fraction(0.7)], selection: $selectedDetent)
+            .presentationDragIndicator(.hidden)
+            .interactiveDismissDisabled()
+            .presentationBackgroundInteraction(.enabled)
+        }
     }
+    
 }
 
 #Preview {
