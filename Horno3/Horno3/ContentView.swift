@@ -1,45 +1,38 @@
 //
 //  ContentView.swift
-//  MAPImplementacion
+//  Horno3
 //
-//  Created by Alumno on 13/03/25.
+//  Created by Ranferi Márquez Puig on 18/03/25.
 //
 
 import SwiftUI
-import MapKit
 
 struct ContentView: View {
     @State private var isExpanded = false
     
     var body: some View {
-        VStack{
-            VStack{
-                    if isExpanded {
-                        ZStack(alignment: .top){
-                            FullMapView(isExpanded: $isExpanded)
-                                .frame(width: .infinity, height: .infinity)
-                                .edgesIgnoringSafeArea(.all)
-                        }
-                    } else {
-                        VStack{
-                            MiniMapView(isExpanded: $isExpanded)
-                            Text("NoEXPANDEN")
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                        .padding(.top, 80)
-                        .edgesIgnoringSafeArea(.all)
-                    }
-            }
-            VStack{
-                
-            }
-        }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-        .ignoresSafeArea(.all)
         
+        
+        TabView {
+            InicioView()
+                .tabItem {
+                    Label("Inicio", systemImage: "house")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Ajustes", systemImage: "gear")
+                }
+            
+            ScannerView()
+                .tabItem {
+                    Label("Escáner", systemImage: "qrcode.viewfinder")
+                }
+        }
     }
 }
 
 #Preview {
     ContentView()
 }
+
