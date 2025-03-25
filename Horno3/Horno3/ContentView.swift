@@ -16,9 +16,11 @@ struct ContentView: View {
             VStack{
                     if isExpanded {
                         ZStack(alignment: .top){
-                            FullMapView(isExpanded: $isExpanded)
+                            /*FullMapView(isExpanded: $isExpanded)
                                 .frame(width: .infinity, height: .infinity)
-                                .edgesIgnoringSafeArea(.all)
+                                .edgesIgnoringSafeArea(.all)*/
+                            JAUNView()
+
                         }
                     } else {
                         VStack{
@@ -28,6 +30,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         .padding(.top, 80)
                         .edgesIgnoringSafeArea(.all)
+                        
                     }
             }
             VStack{

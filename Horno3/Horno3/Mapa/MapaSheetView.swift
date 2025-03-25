@@ -2,7 +2,7 @@
 //  MapaSheetView.swift
 //  Horno3
 //
-//  Created by Alumno on 20/03/25.
+//  Created by Apus on 20/03/25.
 //
 
 import SwiftUI
