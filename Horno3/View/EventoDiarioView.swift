@@ -12,7 +12,7 @@ struct EventoDiario: View {
            Text("Eventos diarios")
             .font(.largeTitle)
             .fontDesign(.default)
-            .fontWeight(.bold)
+            .fontWeight(.black)
             .padding()
        }
 }

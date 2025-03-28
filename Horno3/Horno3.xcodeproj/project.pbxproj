@@ -11,6 +11,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C7433C002D965A6300B4DAF5 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7433C022D965A8700B4DAF5 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7433C042D965AB300B4DAF5 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FB3C732A2D7217B8001D9F57 /* Horno3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Horno3;
@@ -34,6 +49,9 @@
 			children = (
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 				FB3C73292D7217B8001D9F57 /* Products */,
+				C7433C022D965A8700B4DAF5 /* View */,
+				C7433C002D965A6300B4DAF5 /* Model */,
+				C7433C042D965AB300B4DAF5 /* ViewModel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +79,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				C7433C002D965A6300B4DAF5 /* Model */,
+				C7433C022D965A8700B4DAF5 /* View */,
+				C7433C042D965AB300B4DAF5 /* ViewModel */,
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 			);
 			name = Horno3;

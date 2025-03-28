@@ -1,0 +1,17 @@
+[
+    {
+        "imagen": "img1",
+        "titulo": "The real dream",
+        "descripcion": "Un museo impresionante con exhibiciones de arte clásico."
+    },
+    {
+        "imagen": "img1",
+        "titulo": "Nor Modern",
+        "descripcion": "Un espacio dedicado al arte contemporáneo y exposiciones innovadoras."
+    },
+    {
+        "imagen": "img1",
+        "titulo": "Sarahbaray",
+        "descripcion": "Un museo histórico con una arquitectura fascinante."
+    }
+]

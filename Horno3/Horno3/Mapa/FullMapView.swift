@@ -39,7 +39,8 @@ struct FullMapView: View {
                         .background(.white)
                         .clipShape(.circle)
                         .frame(maxWidth: 75, maxHeight: 75)
-                        .padding()
+                        .padding(.top, 40)
+                        .padding(.leading)
                 }
                 ZStack{
                     //MapaSheetView()
