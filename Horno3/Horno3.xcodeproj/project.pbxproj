@@ -28,6 +28,9 @@
 		};
 		FB3C732A2D7217B8001D9F57 /* Horno3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFolders = (
+				IndoorMap/IMDFData,
+			);
 			path = Horno3;
 			sourceTree = "<group>";
 		};
