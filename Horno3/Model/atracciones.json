@@ -1,17 +1,17 @@
 [
     {
-        "imagen": "img1",
-        "titulo": "The real dream",
-        "descripcion": "Un museo impresionante con exhibiciones de arte clásico."
+        "imagen": "museo",
+        "titulo": "Horno e historia de Monterrey",
+        "descripcion": "Un museo impresionante con elementos historicos y fragmentos de la construccion del Horno."
     },
     {
-        "imagen": "img1",
-        "titulo": "Nor Modern",
+        "imagen": "tierra",
+        "titulo": "Planeta Tierra",
         "descripcion": "Un espacio dedicado al arte contemporáneo y exposiciones innovadoras."
     },
     {
-        "imagen": "img1",
-        "titulo": "Sarahbaray",
-        "descripcion": "Un museo histórico con una arquitectura fascinante."
+        "imagen": "mirador",
+        "titulo": "Mirador",
+        "descripcion": "Un mirador fascinante. Con la vista a toda la ciudad de Monterrey."
     }
 ]

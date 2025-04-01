@@ -35,7 +35,7 @@ struct FullMapView: View {
                     Image(systemName: "house.circle.fill")
                         .resizable()
                         .font(.title)
-                        .foregroundColor(.orange)
+                        .foregroundColor(.hornoOrange)
                         .background(.white)
                         .clipShape(.circle)
                         .frame(maxWidth: 75, maxHeight: 75)
@@ -51,6 +51,7 @@ struct FullMapView: View {
                         if (selectedDetent != .height(100)) {
                             Text("We can’t wait to see what you will Create with Swift!")
                                 .font(.title)
+                                .padding()
                             
                         }
                         

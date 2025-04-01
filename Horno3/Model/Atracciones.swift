@@ -13,14 +13,6 @@ struct Atracciones: View {
     
     var body: some View {
         VStack() {
-            VStack(alignment: .leading) {
-                Text("Atracciones")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     ForEach(viewModel.atracciones) { atraccion in
@@ -29,13 +21,13 @@ struct Atracciones: View {
                                 Image(atraccion.imagen)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 200, height: 200)
+                                    .frame(width: 180, height: 150)
                                     .cornerRadius(10)
                                     .shadow(radius: 5)
                                 
                                 Text(atraccion.titulo)
                                     .font(.headline)
-                                    .foregroundColor(.indigo)
+                                    .foregroundColor(.hornoOrange)
                                 
                                 Text(atraccion.descripcion)
                                     .font(.subheadline)
@@ -60,4 +52,3 @@ struct Atracciones: View {
 #Preview {
     Atracciones()
 }
-

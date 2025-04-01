@@ -20,6 +20,11 @@ struct ContentView: View {
             
             SettingsView()
                 .tabItem {
+                    Label("Mapa", systemImage: "map")
+                }
+            
+            SettingsView()
+                .tabItem {
                     Label("Ajustes", systemImage: "gear")
                 }
             
