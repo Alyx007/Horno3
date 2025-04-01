@@ -11,7 +11,7 @@ struct DetalleAtraccion: View {
     let atraccion: Atraccion
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Image(atraccion.imagen)
                 .resizable()
                 .scaledToFit()
@@ -22,12 +22,12 @@ struct DetalleAtraccion: View {
             Text(atraccion.titulo)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.indigo)
-                .padding(.top, 10)
+                .foregroundColor(.hornoOrange)
+                .padding()
             
             Text(atraccion.descripcion)
                 .font(.body)
-                .foregroundColor(.gray)
+                .foregroundColor(.hornoOrange)
                 .padding()
             
             Spacer()
@@ -40,3 +40,4 @@ struct DetalleAtraccion: View {
 #Preview {
     DetalleAtraccion(atraccion: Atraccion(imagen: "museum1", titulo: "The Real Dream", descripcion: "Un museo impresionante con arte renacentista y moderno."))
 }
+

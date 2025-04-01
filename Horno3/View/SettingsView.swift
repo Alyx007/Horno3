@@ -23,7 +23,9 @@ struct SettingsView: View {
                         .onChange(of: darkMode) { _ in
                             UIApplication.shared.windows.first?.overrideUserInterfaceStyle = darkMode ? .dark : .light
                         }
-                    
+                }
+                
+                Section(header: Text("Ajuste de brillo")) {
                     Slider(value: $brightness, in: 0...1, step: 0.1) {
                         Text("Brillo")
                     }
