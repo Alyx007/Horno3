@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct EventoDetalle: View {
-        let evento: Evento
+struct DetalleEvento: View {
+    let evento: Evento
         
-        var body: some View {
-            VStack(alignment: .leading) {
+    var body: some View {
+        VStack(alignment: .leading) {
                 Image(evento.imagen)
                     .resizable()
                     .scaledToFit()
@@ -38,5 +38,5 @@ struct EventoDetalle: View {
     }
 
 #Preview {
-    DetalleEvento(evento: Evento(imagen: "museum1", titulo: "The Real Dream", descripcion: "Un museo impresionante con arte renacentista y moderno."))
+    DetalleEvento(evento: Evento(imagen: "museo", titulo: "The Real Dream", descripcion: "Un museo impresionante con arte renacentista y moderno."))
 }

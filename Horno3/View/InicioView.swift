@@ -32,14 +32,14 @@ struct InicioView: View {
                                         .font(.system(size: 15.0))
                                         .baselineOffset(6.0)
                                 }
-                            Atracciones()
+                                Atracciones()
                                 .tabViewStyle(.page)
                                 .indexViewStyle(.page(backgroundDisplayMode: .automatic))
-                                .frame(height: 220) // Adjust height as needed
+                                .frame(height: 200) // Adjust height as needed
                                 .padding(.vertical)
                                 
                                 
-                            Atracciones()
+                                Eventos()
                                 .tabViewStyle(.page)
                                 .indexViewStyle(.page(backgroundDisplayMode: .automatic))
                                 .frame(height: 220) // Adjust height as needed

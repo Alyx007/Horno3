@@ -2,13 +2,13 @@
 //  EventoViewModel.swift
 //  Horno3
 //
-//  Created by Alumno on 01/04/25.
+//  Created by Aleksandra on 01/04/25.
 //
 
 import Foundation
 
-class EventoViewModel: ObservableObject {
-    @Published var evento: [Evento] = []
+class EventosViewModel: ObservableObject {
+    @Published var eventos: [Evento] = []
     
     init() {
         cargarDatos()
@@ -20,7 +20,7 @@ class EventoViewModel: ObservableObject {
             let decoder = JSONDecoder()
             if let eventoCargado = try? decoder.decode([Evento].self, from: data) {
                 DispatchQueue.main.async {
-                    self.evento = eventoCargado
+                    self.eventos = eventoCargado
                 }
             }
         }

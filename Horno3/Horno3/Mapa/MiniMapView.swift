@@ -14,7 +14,7 @@ struct MiniMapView: View {
     @State private var region = MapCameraPosition.region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 25.676189952629407, longitude: -100.2825522939145),
-            span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+            span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0003)
         )
     )
     

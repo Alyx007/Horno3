@@ -1,7 +1,7 @@
 [
     {
         "imagen": "museo",
-        "titulo": "Horno e historia de Monterrey",
+        "titulo": "Historia de Monterrey",
         "descripcion": "Un museo impresionante con elementos historicos y fragmentos de la construccion del Horno."
     },
     {
@@ -11,7 +11,17 @@
     },
     {
         "imagen": "mirador",
-        "titulo": "Mirador",
+        "titulo": "Paseo por la Cima",
+        "descripcion": "Un mirador fascinante. Con la vista a toda la ciudad de Monterrey."
+    }
+    {
+        "imagen": "mirador",
+        "titulo": "Reaccion en cadena",
+        "descripcion": "Un mirador fascinante. Con la vista a toda la ciudad de Monterrey."
+    }
+    {
+        "imagen": "mirador",
+        "titulo": "Galeria del acero",
         "descripcion": "Un mirador fascinante. Con la vista a toda la ciudad de Monterrey."
     }
 ]

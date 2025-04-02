@@ -2,14 +2,19 @@
 //  MapView.swift
 //  Horno3
 //
-//  Created by Alumno on 01/04/25.
+//  Created by Aleksandra on 01/04/25.
 //
 
 import SwiftUI
 
 struct MapView: View {
+    @State private var isExpanded = true
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .top) {
+            MapaIndoorView(isExpanded: $isExpanded)
+                .frame(width: .infinity, height: .infinity)
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

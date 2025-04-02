@@ -18,7 +18,7 @@ struct ContentView: View {
                     Label("Inicio", systemImage: "house")
                 }
             
-            SettingsView()
+            MapView()
                 .tabItem {
                     Label("Mapa", systemImage: "map")
                 }

@@ -1,0 +1,17 @@
+[
+    {
+        "imagen": "museo",
+        "titulo": "Evento cientifico",
+        "descripcion": "Exposicion temporal para los fans de ciencia!"
+    },
+    {
+        "imagen": "tierra",
+        "titulo": "Planeta Tierra",
+        "descripcion": "Un espacio dedicado al arte contemporáneo y exposiciones innovadoras."
+    },
+    {
+        "imagen": "mirador",
+        "titulo": "Mirador",
+        "descripcion": "Un mirador fascinante. Con la vista a toda la ciudad de Monterrey."
+    }
+]
