@@ -10,22 +10,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "elevator",
+        "category": "room",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Lobby"
+        },
         "phone": null,
         "unit_ids": [
-          "a2bf457a-5379-4d46-836f-1ff0f0e7074e",
-          "ddaca3f3-abd8-41f7-9359-d0e93858e378"
+          "6382938a-b59b-4631-b2ea-54ddd13562a3"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8888997,
-          37.3285715
+          -100.282871,
+          25.676208
         ]
       }
     },
@@ -37,22 +38,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "escalator",
+        "category": "walkway",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Hall"
+        },
         "phone": null,
         "unit_ids": [
-          "d0ffd55a-9b99-4ebd-ac08-97a3d448c0f7",
-          "40370a65-cfc8-4673-afe5-31482b2a5828"
+          "4bc098b9-8584-4d29-ab56-d78852ccfb3f"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8890422,
-          37.3296916
+          -100.283213,
+          25.676058
         ]
       }
     },
@@ -64,22 +66,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "escalator",
+        "category": "room",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Ticket Shop"
+        },
         "phone": null,
         "unit_ids": [
-          "9dc445f5-c465-4a18-9ba3-2c9cb6908cbc",
-          "f62c4296-aa0c-4f03-9b75-e09a30178ebe"
+          "4e930925-3206-44d6-bf49-fc550296f8e4"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8890426,
-          37.3296912
+          -100.283057,
+          25.67603
         ]
       }
     },
@@ -91,22 +94,21 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "escalator",
+        "category": "restroom",
         "correlation_id": null,
         "hours": null,
         "name": null,
         "phone": null,
         "unit_ids": [
-          "65987a75-1c44-45a0-b44c-82ae88ab3f4c",
-          "234625ee-9f40-4fae-980a-6bdf9fca0a87"
+          "ad360167-3bf2-4273-842c-b7ca0ec5535e"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8890106,
-          37.3297032
+          -100.28312,
+          25.676029
         ]
       }
     },
@@ -118,22 +120,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "stairs",
+        "category": "room",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Innovation Laboratory"
+        },
         "phone": null,
         "unit_ids": [
-          "8ade1f78-5841-4b57-8386-75355c7e0252",
-          "f1e17183-0fed-47b8-878e-1f888b7e9099"
+          "388903cd-d5da-430c-8069-f5911debb6a7"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8882474,
-          37.3296594
+          -100.283171,
+          25.676024
         ]
       }
     },
@@ -145,22 +148,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "stairs",
+        "category": "Gallery",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Iron Gallery"
+        },
         "phone": null,
         "unit_ids": [
-          "b6f13719-4210-48d5-846a-62e7f0519b1b",
-          "1697abfa-7b60-4ccf-bfd6-74807406c2f7"
+          "ef01472e-429c-4ddf-a024-2784e0bcc92f"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8878280,
-          37.3297908
+          -100.283189,
+          25.676341
         ]
       }
     },
@@ -172,22 +176,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "elevator",
+        "category": "Gallery",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "History Gallery"
+        },
         "phone": null,
         "unit_ids": [
-          "8f3e39e8-af00-4ee2-8502-3de7f9165e00",
-          "ca36667a-07b6-4f13-ae44-101efe218bfc"
+          "de2c1f28-217d-4b71-99b6-9270383f0055"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8888991,
-          37.3285690
+          -100.28294,
+          25.676516
         ]
       }
     },
@@ -199,22 +204,21 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "stairs",
+        "category": "restroom",
         "correlation_id": null,
         "hours": null,
         "name": null,
         "phone": null,
         "unit_ids": [
-          "93c6060f-dd4d-4946-9d56-b88a7f395ae0",
-          "1dd7ea28-eae5-4f9a-a7a2-21a74e03f2ef"
+          "c61efb19-969f-443e-b141-cc00780bc93b"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8902384,
-          37.3290152
+          -100.283178,
+          25.676499
         ]
       }
     },
@@ -226,22 +230,23 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "stairs",
+        "category": "room",
         "correlation_id": null,
         "hours": null,
-        "name": null,
+        "name": {
+          "en": "Shop"
+        },
         "phone": null,
         "unit_ids": [
-          "01fa64c6-cdc1-48e9-8c48-4c0cfd1c657d",
-          "91285dbc-bade-4438-a59c-2ef88e97528f"
+          "27fda7b2-612a-4412-8ec7-91bdf52b5884"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8903485,
-          37.3289621
+          -100.283117,
+          25.676165
         ]
       }
     },
@@ -253,380 +258,25 @@
         "accessibility": null,
         "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
         "alt_name": null,
-        "category": "escalator",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "269236f4-b17b-45bf-bd31-820dee3807a2",
-          "412f88b8-d469-43a4-99d3-1d71a92d2ea3"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8890048,
-          37.3296946
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "4ada741f-1c54-4fd2-aec4-e5ef040c6c27",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "elevator",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "32c0a4b5-9675-407f-a8e8-8e13e2f21f7c",
-          "ced955bd-4fd6-477b-b62a-8690449d9814"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8888991,
-          37.3285690
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "f0e59fe9-f7f7-4f0d-999b-fbaeeee3ce7e",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "9fb407af-982e-43a5-bfce-12aac9378925",
-          "54650f3b-c895-4873-a733-3bf2a6e0a331"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8892246,
-          37.3292444
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "d2864a83-a73e-4299-a3c6-7cbb2406bf6d",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "4500a0fa-ca5c-4056-ab78-0799806aa0a6",
-          "2e1f6751-9f22-444e-847b-2da650064940"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8885441,
-          37.3294589
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "5697d51b-c271-4cfd-89d4-9e1b84b92822",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "4874118e-38a8-4f5e-bb28-8020d4448f36",
-          "676771c0-8574-41ef-8d3c-36f446a9eb0a"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8899060,
-          37.3290309
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "7a31f45a-ec53-4f50-a8fa-4d10f7241bba",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "3256546e-4f98-4a38-842a-d51ec1b948dc",
-          "d5d1a2d1-4d14-44ca-88be-97e99faf13d0"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8897171,
-          37.3293026
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "d4651cfe-bc9e-4c24-b01a-7e8edc5a05c8",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "f21aeff0-d46d-43c9-bf66-b5f3c78d957f",
-          "ff26de56-0a31-445d-9922-1ac27969cb09"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8880080,
-          37.3297042
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "7fa39fb9-718b-4113-abf2-d3e9ec6a7f67",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "5162423c-f22d-4196-bb51-e01ed6c40cd5",
-          "bd3c989c-ca1c-45d8-830c-4b9597e770a2"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8877433,
-          37.3298311
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "1df85816-8029-4a14-ba7f-abdf9f4a04d7",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "c3d9f038-08b1-4d22-bb09-dbc1ec6588be",
-          "0b65c895-2faf-4154-bc60-60227754dc0d"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8877036,
-          37.3291423
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "5471f400-1f4b-4ce3-83a5-e00d0376a64f",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "3a589851-264f-4d34-bfd0-aba8d7070551",
-          "3a6ebefc-311d-4786-8ae8-70882f23c9c7"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8901558,
-          37.3286138
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "f738180c-9bb7-406b-a759-8d768254dadf",
-      "properties": {
-        "accessibility": null,
-        "address_id": "e105efb7-b0d1-4144-8b8e-72eadf95724f",
-        "alt_name": null,
-        "category": "restroom",
-        "correlation_id": null,
-        "hours": null,
-        "name": null,
-        "phone": null,
-        "unit_ids": [
-          "80eb851b-47c6-432f-a6fa-27b006b4b14d",
-          "43ec0a85-bdad-41d9-9b4f-99073b978386"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.8891130,
-          37.3294738
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "a89da5f4-6e16-495d-a982-27a31af751d4",
-      "properties": {
-        "accessibility": null,
-        "address_id": null,
-        "alt_name": null,
-        "category": "exhibit",
+        "category": "room",
         "correlation_id": null,
         "hours": null,
         "name": {
-          "en": "T-Rex Exhibit"
+          "en": "Wardrobe"
         },
         "phone": null,
         "unit_ids": [
-          "ff033dba-6b6e-47ee-88d4-94efd6f4c4e9"
+          "a2bf457a-5379-4d46-836f-1ff0f0e7074e"
         ],
         "website": null
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.8890391,
-          37.3289201
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "a89da5f4-6e16-495d-a982-27a31af751d5",
-      "properties": {
-        "accessibility": null,
-        "address_id": null,
-        "alt_name": null,
-        "category": "exhibit",
-        "correlation_id": null,
-        "hours": null,
-        "name": {
-          "en": "Bone Hall"
-        },
-        "phone": null,
-        "unit_ids": [
-          "a517e630-182f-4552-91b6-882063eea03c"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-            -121.8883862,
-            37.3291811
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "feature_type": "amenity",
-      "id": "a89da5f4-6e16-495d-a982-27a31af751d6",
-      "properties": {
-        "accessibility": null,
-        "address_id": null,
-        "alt_name": null,
-        "category": "exhibit",
-        "correlation_id": null,
-        "hours": null,
-        "name": {
-          "en": "Sauropod Exhibit"
-        },
-        "phone": null,
-        "unit_ids": [
-          "f157b1d0-dd9c-4d59-a216-ad52893c2694"
-        ],
-        "website": null
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-            -121.8896503,
-            37.3286909
+          -100.28324,
+          25.676018
         ]
       }
     }
-
-
   ]
 }
