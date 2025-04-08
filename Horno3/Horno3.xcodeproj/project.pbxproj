@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FB897F972DA5770600F2D2FA /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = FB897F962DA5770600F2D2FA /* IMDFData */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FB3C73282D7217B8001D9F57 /* Horno3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horno3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB897F962DA5770600F2D2FA /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,9 +33,6 @@
 		};
 		FB3C732A2D7217B8001D9F57 /* Horno3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			explicitFolders = (
-				IndoorMap/IMDFData,
-			);
 			path = Horno3;
 			sourceTree = "<group>";
 		};
@@ -50,6 +52,7 @@
 		FB3C731F2D7217B8001D9F57 = {
 			isa = PBXGroup;
 			children = (
+				FB897F962DA5770600F2D2FA /* IMDFData */,
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 				FB3C73292D7217B8001D9F57 /* Products */,
 				C7433C022D965A8700B4DAF5 /* View */,
@@ -133,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB897F972DA5770600F2D2FA /* IMDFData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
