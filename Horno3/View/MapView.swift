@@ -11,9 +11,10 @@ struct MapView: View {
     @State private var isExpanded = true
     var body: some View {
         ZStack(alignment: .top) {
-            MapaIndoorView(isExpanded: $isExpanded)
+            SheetView(isExpanded: $isExpanded)
                 .frame(width: .infinity, height: .infinity)
                 .edgesIgnoringSafeArea(.all)
+            
         }
     }
 }

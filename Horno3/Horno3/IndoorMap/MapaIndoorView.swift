@@ -23,24 +23,6 @@ struct MapaIndoorView: View {
                     .padding(.trailing, 15)
                 
             }
-            ZStack(alignment: .topLeading){
-                Button(action: {
-                    withAnimation {
-                        isExpanded.toggle()
-                    }
-                })
-                {
-                    Image(systemName: "house.circle.fill")
-                        .resizable()
-                        .font(.title)
-                        .foregroundColor(.hornoOrange)
-                        .background(.white)
-                        .clipShape(.circle)
-                        .frame(maxWidth: 75, maxHeight: 75)
-                        .padding(.leading, 25)
-                        .padding(.top, 50)
-                }
-            }
         }
     }
 }
