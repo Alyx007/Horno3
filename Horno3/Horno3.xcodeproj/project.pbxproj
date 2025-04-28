@@ -6,9 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FB897F972DA5770600F2D2FA /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = FB897F962DA5770600F2D2FA /* IMDFData */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FB3C73282D7217B8001D9F57 /* Horno3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horno3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB897F962DA5770600F2D2FA /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FB897FF52DA57C0200F2D2FA /* Exceptions for "Horno3" folder in "Horno3" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FB3C73272D7217B8001D9F57 /* Horno3 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C7433C002D965A6300B4DAF5 /* Model */ = {
@@ -28,8 +43,8 @@
 		};
 		FB3C732A2D7217B8001D9F57 /* Horno3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			explicitFolders = (
-				IndoorMap/IMDFData,
+			exceptions = (
+				FB897FF52DA57C0200F2D2FA /* Exceptions for "Horno3" folder in "Horno3" target */,
 			);
 			path = Horno3;
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 		FB3C731F2D7217B8001D9F57 = {
 			isa = PBXGroup;
 			children = (
+				FB897F962DA5770600F2D2FA /* IMDFData */,
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 				FB3C73292D7217B8001D9F57 /* Products */,
 				C7433C022D965A8700B4DAF5 /* View */,
@@ -133,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB897F972DA5770600F2D2FA /* IMDFData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +296,7 @@
 				DEVELOPMENT_TEAM = 7TF9KQA3JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Horno3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +326,7 @@
 				DEVELOPMENT_TEAM = 7TF9KQA3JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Horno3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
