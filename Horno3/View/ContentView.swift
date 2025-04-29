@@ -28,7 +28,7 @@ struct ContentView: View {
                     Label("Ajustes", systemImage: "gear")
                 }
             
-            ScannerView()
+            Escanner()
                 .tabItem {
                     Label("Escáner", systemImage: "qrcode.viewfinder")
                 }
