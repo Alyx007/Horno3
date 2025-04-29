@@ -1,7 +1,13 @@
 # Horno3
-Apliacion desarrollada por el Equipo Apus
+Apliacion desarrollada para socio formador, museo Horno<sup>3</sup> en Monterrey, Nuevo Leon, por el Equipo Apus: 
 
 
-## modo dev ---- vpn y permitir
+``
 
-## xcode ---- dev tools --- boton de accesibilidad - accesibility inspector
+``
+
+## Para poder ejecutar la aplicación en el IPhone fisico: 
+1. modo dev ---- vpn y permitir
+2. xcode ---- dev tools --- boton de accesibilidad - accesibility inspector
+
+
