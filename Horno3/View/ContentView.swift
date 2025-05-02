@@ -18,7 +18,7 @@ struct ContentView: View {
                     Label("Inicio", systemImage: "house")
                 }
             
-            MapView()
+            MapContainerView(isExpanded: $isExpanded)
                 .tabItem {
                     Label("Mapa", systemImage: "map")
                 }

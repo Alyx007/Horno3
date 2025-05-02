@@ -15,6 +15,10 @@ class IndoorMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     @Published var levels: [Level] = []
     @Published var selectedLevelOrdinal: Int = 0
     @Published var initialMapRect: MKMapRect?
+    @Published var selectedUnit: Unit?
+    @Published var startUnit: UnitRoute?
+    @Published var endUnit: UnitRoute?
+    @Published var routeOverlay: MKPolyline?
     
     var currentLevelFeatures = [StylableFeature]()
     var currentLevelOverlays = [MKOverlay]()
@@ -71,5 +75,11 @@ class IndoorMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         if manager.authorizationStatus == .authorizedWhenInUse {
             manager.startUpdatingLocation()
         }
+    }
+    
+    func createRoute(){
+        guard let start = startUnit, let end = endUnit else { return }
+        let coords = [start.coordinate, end.coordinate]
+        routeOverlay = MKPolyline(coordinates: coords, count: coords.count)
     }
 }

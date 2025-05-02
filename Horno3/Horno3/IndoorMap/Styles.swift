@@ -5,6 +5,7 @@ Abstract:
 Extensions to the IMDF types to enable styling overlays/annotations based on their properties.
 */
 
+import SwiftUI
 import MapKit
 
 protocol StylableFeature {
@@ -74,13 +75,41 @@ extension Opening: StylableFeature {
 extension Amenity: StylableFeature {
     private enum StylableCategory: String {
         case exhibit
+        case restroom
+        case room
+        
     }
     
     func configure(annotationView: MKAnnotationView) {
         if let category = StylableCategory(rawValue: self.properties.category) {
             switch category {
             case .exhibit:
-                annotationView.backgroundColor = UIColor(named: "ExhibitFill")
+                let categoryIcon = UIImage(named: self.properties.category)
+                if let image = categoryIcon {
+                    // Resize the image to a more appropriate size for map annotations
+                    let scaledImage = image.scaledToSize(CGSize(width: 30, height: 30))
+                    annotationView.image = scaledImage
+                } else {
+                    annotationView.backgroundColor = UIColor(named: "ExhibitFill")
+                }
+            case .restroom:
+                let categoryIcon = UIImage(named: self.properties.category)
+                if let image = categoryIcon {
+                    // Resize the image to a more appropriate size for map annotations
+                    let scaledImage = image.scaledToSize(CGSize(width: 15, height: 15))
+                    annotationView.image = scaledImage
+                } else {
+                    annotationView.backgroundColor = UIColor(named: "RestroomFill")
+                }
+            case .room:
+                let categoryIcon = UIImage(named: self.properties.category)
+                if let image = categoryIcon {
+                    // Resize the image to a more appropriate size for map annotations
+                    let scaledImage = image.scaledToSize(CGSize(width: 20, height: 20))
+                    annotationView.image = scaledImage
+                } else {
+                    annotationView.backgroundColor = UIColor(named: "RoomFill")
+                }
             }
         } else {
             annotationView.backgroundColor = UIColor(named: "DefaultAmenityFill")
@@ -88,6 +117,16 @@ extension Amenity: StylableFeature {
         
         // Most Amenities have lower display priority then Occupants.
         annotationView.displayPriority = .defaultLow
+    }
+}
+
+// Add this UIImage extension for resizing
+extension UIImage {
+    func scaledToSize(_ size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        self.draw(in: CGRect(origin: .zero, size: size))
+        return UIGraphicsGetImageFromCurrentImageContext() ?? self
     }
 }
 

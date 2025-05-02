@@ -9,7 +9,7 @@ struct InicioView: View {
                 VStack {
                     if isExpanded {
                         ZStack(alignment: .top) {
-                            MapaIndoorView(isExpanded: $isExpanded)
+                            HomeButtonMap(isExpanded: $isExpanded)
                                 .frame(width: .infinity, height: .infinity)
                                 .edgesIgnoringSafeArea(.all)
                         }

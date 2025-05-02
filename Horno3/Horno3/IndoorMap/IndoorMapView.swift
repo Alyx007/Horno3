@@ -10,6 +10,7 @@ import MapKit
 
 struct IndoorMapView: UIViewRepresentable {
     @ObservedObject var viewModel: IndoorMapViewModel
+    @Binding var selectedUnit: UnitRoute?
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -27,6 +28,20 @@ struct IndoorMapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
         context.coordinator.updateMap(for: viewModel.selectedLevelOrdinal, mapView: uiView)
+        if let unit = selectedUnit {
+            let region = MKCoordinateRegion(
+                center: unit.coordinate,
+                span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005)
+            )
+            uiView.setRegion(region, animated: true)
+            
+            if let ann = uiView.annotations
+                .compactMap({ $0 as? UnitAnnotation})
+                .first(where: { $0.unit.id == unit.id})
+                    {
+                        uiView.selectAnnotation(ann, animated: true)
+                }
+        }
     }
     
     func makeCoordinator() -> Coordinator {
@@ -69,10 +84,27 @@ struct IndoorMapView: UIViewRepresentable {
             
             mapView.addOverlays(overlays)
             mapView.addAnnotations(viewModel.currentLevelAnnotations)
+            
+            //add Route coordinator
+            if let old = viewModel.routeOverlay {
+                mapView.removeOverlay(old)
+            }
+            
+            if let routeOverlay = viewModel.routeOverlay {
+                mapView.addOverlay(routeOverlay)
+            }
         }
         
         // MARK: - MKMapViewDelegate
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            //ADD ROUTE
+            if let routeOverlay = viewModel.routeOverlay, overlay === routeOverlay {
+                let renderer = MKPolylineRenderer(polyline: routeOverlay)
+                renderer.strokeColor = .blue
+                renderer.lineWidth = 4
+                renderer.lineDashPattern = [10, 5]
+                return renderer
+            }
             guard let shape = overlay as? (MKShape & MKGeoJSONObject),
                   let feature = viewModel.currentLevelFeatures.first(where: { $0.geometry.contains { $0 == shape } }) else {
                 return MKOverlayRenderer(overlay: overlay)
