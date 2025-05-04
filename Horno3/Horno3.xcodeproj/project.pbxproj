@@ -6,13 +6,51 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FB897F972DA5770600F2D2FA /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = FB897F962DA5770600F2D2FA /* IMDFData */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FB3C73282D7217B8001D9F57 /* Horno3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horno3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB897F962DA5770600F2D2FA /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FB897FF52DA57C0200F2D2FA /* Exceptions for "Horno3" folder in "Horno3" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FB3C73272D7217B8001D9F57 /* Horno3 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C7433C002D965A6300B4DAF5 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7433C022D965A8700B4DAF5 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7433C042D965AB300B4DAF5 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FB21E11F2DC158C30016791A /* Scanner */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		FB3C732A2D7217B8001D9F57 /* Horno3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FB897FF52DA57C0200F2D2FA /* Exceptions for "Horno3" folder in "Horno3" target */,
+			);
 			path = Horno3;
 			sourceTree = "<group>";
 		};
@@ -32,8 +70,13 @@
 		FB3C731F2D7217B8001D9F57 = {
 			isa = PBXGroup;
 			children = (
+				FB21E11F2DC158C30016791A /* Scanner */,
+				FB897F962DA5770600F2D2FA /* IMDFData */,
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 				FB3C73292D7217B8001D9F57 /* Products */,
+				C7433C022D965A8700B4DAF5 /* View */,
+				C7433C002D965A6300B4DAF5 /* Model */,
+				C7433C042D965AB300B4DAF5 /* ViewModel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +104,10 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				C7433C002D965A6300B4DAF5 /* Model */,
+				C7433C022D965A8700B4DAF5 /* View */,
+				C7433C042D965AB300B4DAF5 /* ViewModel */,
+				FB21E11F2DC158C30016791A /* Scanner */,
 				FB3C732A2D7217B8001D9F57 /* Horno3 */,
 			);
 			name = Horno3;
@@ -109,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB897F972DA5770600F2D2FA /* IMDFData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +300,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Horno3/Preview Content\"";
+				DEVELOPMENT_TEAM = Q4L5GLAD5L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Horno3/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Escanner;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is required for xyz benefits for you";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is required for xyz benefits for you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -264,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Apus.itesm.Horno3;
+				PRODUCT_BUNDLE_IDENTIFIER = Apus.itesm1.Horno32;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -280,8 +333,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Horno3/Preview Content\"";
+				DEVELOPMENT_TEAM = Q4L5GLAD5L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Horno3/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Escanner;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is required for xyz benefits for you";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is required for xyz benefits for you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Apus.itesm.Horno3;
+				PRODUCT_BUNDLE_IDENTIFIER = Apus.itesm1.Horno32;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
