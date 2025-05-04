@@ -2,10 +2,10 @@ import SwiftUI
 import AVFoundation
 import Vision
 import CoreML
+import Translation
 
-struct CameraPreview: UIViewRepresentable {
+struct Camara: UIViewRepresentable {
     let session: AVCaptureSession
-    
     func makeUIView(context: Context) -> UIView {
         let view = UIView(frame: UIScreen.main.bounds)
         let previewLayer = AVCaptureVideoPreviewLayer(session: session)
@@ -14,7 +14,6 @@ struct CameraPreview: UIViewRepresentable {
         view.layer.addSublayer(previewLayer)
         return view
     }
-    
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
@@ -46,22 +45,22 @@ enum ScanningMode {
 
 class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate {
     @Published var scanningMode: ScanningMode = .imageClassification
-    @Published var detectedLabels: [String] = []
     @Published var infoForLastDetection: ObjetoInfo?
+    @Published var detectedLabels: [String] = []
     @Published var showDetectionText = false
     @Published var detectedURL: URL?
     private var classificationModel: VNCoreMLModel?
-    private var videoOutput: AVCaptureVideoDataOutput?
+    private var videodataOutput: AVCaptureVideoDataOutput?
     private var metadataOutput: AVCaptureMetadataOutput?
     private var lastDetectionTime: Date?
     private var currentDetection: String?
     private var detectionTimer: Timer?
-    let session = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "com.museo.cameraQueue")
+    let CaptureSession = AVCaptureSession()
     private let datosDeObjeto: [String: ObjetoInfo] = [
         "Horno 1": ObjetoInfo(
             nombre: "Horno 1",
-            informacion: "Es una pieza clave del patrimonio industrial de México. Formó parte de la Fundidora de Fierro y Acero de Monterrey, la primera siderúrgica de América Latina, fundada en 1900. Este horno, junto con otros, fue esencial en la producción de acero que impulsó el desarrollo industrial del país durante el siglo XX.."
+            informacion: "Es una pieza clave del patrimonio industrial de México. Formó parte de la Fundidora de Fierro y Acero de Monterrey, la primera siderúrgica de América Latina, fundada en 1900. Este horno, junto con otros, fue esencial en la producción de acero que impulsó el desarrollo industrial del país durante el siglo XX."
         ),
         "Valvulas de Gas": ObjetoInfo(
             nombre: "Valvulas de Gas",
@@ -100,36 +99,36 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
         setupCamera()
     }
     
-    private func setupCamera() {
-        sessionQueue.async { [weak self] in
-            guard let self = self else { return }
-            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-                  let input = try? AVCaptureDeviceInput(device: device) else { return }
-            
-            self.session.beginConfiguration()
-            self.session.inputs.forEach { self.session.removeInput($0) }
-            self.session.outputs.forEach { self.session.removeOutput($0) }
-            
-            if self.session.canAddInput(input) {
-                self.session.addInput(input)
-            }
-            
-            self.configureOutputs()
-            self.session.commitConfiguration()
-            
-            if !self.session.isRunning {
-                self.session.startRunning()
-            }
-        }
-    }
-    
     private func setupModel() {
         do {
             let config = MLModelConfiguration()
             let mlModel = try MuseoImagenesML(configuration: config)
             classificationModel = try VNCoreMLModel(for: mlModel.model)
         } catch {
-            print("Error setting up model: \(error.localizedDescription)")
+            print("Error!!!!: \(error.localizedDescription)")
+        }
+    }
+
+    private func setupCamera() {
+        sessionQueue.async { [weak self] in
+            guard let self = self else { return }
+            guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+                  let input = try? AVCaptureDeviceInput(device: device) else { return }
+            
+            self.CaptureSession.beginConfiguration()
+            self.CaptureSession.inputs.forEach { self.CaptureSession.removeInput($0) }
+            self.CaptureSession.outputs.forEach { self.CaptureSession.removeOutput($0) }
+            
+            if self.CaptureSession.canAddInput(input) {
+                self.CaptureSession.addInput(input)
+            }
+            
+            self.configureOutputs()
+            self.CaptureSession.commitConfiguration()
+            
+            if !self.CaptureSession.isRunning {
+                self.CaptureSession.startRunning()
+            }
         }
     }
     
@@ -138,28 +137,28 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
         case .imageClassification:
             let output = AVCaptureVideoDataOutput()
             output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-            if session.canAddOutput(output) {
-                session.addOutput(output)
-                videoOutput = output
+            if CaptureSession.canAddOutput(output) {
+                CaptureSession.addOutput(output)
+                videodataOutput = output
             }
             
             if let metadataOutput = metadataOutput {
-                session.removeOutput(metadataOutput)
+                CaptureSession.removeOutput(metadataOutput)
                 self.metadataOutput = nil
             }
             
         case .qrCode:
             let output = AVCaptureMetadataOutput()
             output.setMetadataObjectsDelegate(self, queue: DispatchQueue(label: "metadataQueue"))
-            if session.canAddOutput(output) {
-                session.addOutput(output)
+            if CaptureSession.canAddOutput(output) {
+                CaptureSession.addOutput(output)
                 metadataOutput = output
                 output.metadataObjectTypes = [.qr]
             }
         
-            if let videoOutput = videoOutput {
-                session.removeOutput(videoOutput)
-                self.videoOutput = nil
+            if let videodataOutput = videodataOutput {
+                CaptureSession.removeOutput(videodataOutput)
+                self.videodataOutput = nil
             }
         }
     }
@@ -167,10 +166,10 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
     func toggleScanningMode() {
         sessionQueue.async { [weak self] in
             guard let self = self else { return }
-            self.session.beginConfiguration()
+            self.CaptureSession.beginConfiguration()
             self.scanningMode = self.scanningMode == .imageClassification ? .qrCode : .imageClassification
             self.configureOutputs()
-            self.session.commitConfiguration()
+            self.CaptureSession.commitConfiguration()
             
             DispatchQueue.main.async {
                 self.resetDetection()
@@ -312,8 +311,8 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
     func startSession() {
         sessionQueue.async { [weak self] in
             guard let self = self else { return }
-            if !self.session.isRunning {
-                self.session.startRunning()
+            if !self.CaptureSession.isRunning {
+                self.CaptureSession.startRunning()
             }
         }
     }
@@ -321,8 +320,8 @@ class CameraManager: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleB
     func stopSession() {
         sessionQueue.async { [weak self] in
             guard let self = self else { return }
-            if self.session.isRunning {
-                self.session.stopRunning()
+            if self.CaptureSession.isRunning {
+                self.CaptureSession.stopRunning()
             }
         }
     }
@@ -335,7 +334,7 @@ struct Escanner: View {
     
     var body: some View {
         ZStack {
-            CameraPreview(session: cameraManager.session)
+            Camara(session: cameraManager.CaptureSession)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -407,13 +406,35 @@ struct Escanner: View {
     }
 }
 
+
 struct ObjetoDetalleView: View {
     let info: ObjetoInfo
     @Environment(\.dismiss) var dismiss
     @StateObject private var audioPlayer = AudioPlayer()
     
+    @State var traduccion = ""
+
+    @State var showTranslation = false
+    
+    func actualizarTraduccion() {
+        switch info.nombre {
+        case "Horno 1":
+            traduccion = "Es una pieza clave del patrimonio industrial de México. Formó parte de la Fundidora de Fierro y Acero de Monterrey, la primera siderúrgica de América Latina, fundada en 1900. Este horno, junto con otros, fue esencial en la producción de acero que impulsó el desarrollo industrial del país durante el siglo XX."
+        case "Planeta Niños":
+            traduccion = "En esta experiencia vivirás el planeta tierra de una manera totalmente diferente a como lo has visto antes, esta experiencia es parte fundamental de nuestro compromiso por divulgar la importancia del cuidado del medio ambiente."
+        case "Horno Principal":
+            traduccion = "En 1968 entró en operaciones el Horno Alto N° 3 que colocó a la Compañía Fundidora como la empresa más antigua con la tecnología más moderna de América Latina, al poseer un Horno Alto de mayor capacidad y automatización. Por dieciocho años el Horno Alto N° 3 iluminó las noches del Monterrey hasta el 9 de mayo de 1986, año en que se apagó para siempre y Fundidora Monterrey cerrara sus puertas definitivamente."
+        case "Estrella de Jorge":
+            traduccion = "Escultura que nos da un vision de la conexion que tiene monterrey con el Horno3"
+        case "Valvulas de Gas":
+            traduccion = "Las válvulas de gas son componentes esenciales para garantizar un manejo seguro y eficiente de los sistemas de gas. Estas válvulas regulan el flujo, la presión y la dirección del gas en diversas aplicaciones industriales, desde la producción hasta el almacenamiento y transporte.​"
+        default:
+            traduccion = "Lo siento, no se encontraron objetos :("
+        }
+    }
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 20) {
                 Text(info.nombre)
                     .font(.largeTitle)
@@ -425,7 +446,7 @@ struct ObjetoDetalleView: View {
                         .multilineTextAlignment(.center)
                         .padding()
                 }
-                
+
                 if info.nombre == "Horno 1" {
                     Button(action: {
                         audioPlayer.playSound(named: "MuseoAu")
@@ -440,7 +461,7 @@ struct ObjetoDetalleView: View {
                         .cornerRadius(10)
                     }
                 }
-                
+
                 if info.nombre == "Planeta Niños" {
                     Button(action: {
                         audioPlayer.playSound(named: "Audiopla")
@@ -455,7 +476,7 @@ struct ObjetoDetalleView: View {
                         .cornerRadius(10)
                     }
                 }
-                
+
                 if info.nombre == "Horno Principal" {
                     Button(action: {
                         audioPlayer.playSound(named: "Crisol")
@@ -470,6 +491,7 @@ struct ObjetoDetalleView: View {
                         .cornerRadius(10)
                     }
                 }
+
                 if info.nombre == "Estrella de Jorge" {
                     Button(action: {
                         audioPlayer.playSound(named: "Estrellaj")
@@ -484,6 +506,7 @@ struct ObjetoDetalleView: View {
                         .cornerRadius(10)
                     }
                 }
+
                 if info.nombre == "Valvulas de Gas" {
                     Button(action: {
                         audioPlayer.playSound(named: "Informacio")
@@ -498,8 +521,18 @@ struct ObjetoDetalleView: View {
                         .cornerRadius(10)
                     }
                 }
+
                 Spacer()
+                
+                // Texto traducido
+                if showTranslation {
+                    Text(traduccion)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                        .transition(.opacity)
+                }
             }
+            
             .padding()
             .navigationTitle("Detalles")
             .toolbar {
@@ -509,8 +542,24 @@ struct ObjetoDetalleView: View {
                         dismiss()
                     }
                 }
+
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        showTranslation.toggle()
+                    } label: {
+                        Image(systemName: "translate")
+                    }
+                }
             }
+            .onAppear {
+                actualizarTraduccion()
+            }
+            .onChange(of: info.nombre) { _ in
+                actualizarTraduccion()
+            }
+            .translationPresentation(isPresented: $showTranslation, text: traduccion)
         }
+
     }
 }
 
@@ -565,11 +614,5 @@ struct ScannerCoolView: View {
                 showWelcomeText = true
             }
         }
-    }
-}
-
-struct Escanner_Previews: PreviewProvider {
-    static var previews: some View {
-        Escanner()
     }
 }
