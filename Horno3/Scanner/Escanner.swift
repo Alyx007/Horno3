@@ -569,7 +569,7 @@ struct ScannerCoolView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                Color.white.edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     if showWelcomeText {
